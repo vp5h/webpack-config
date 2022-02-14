@@ -1,11 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "start": "webpack server",
+    "dev": "webpack serve --static ./dist",
+    "start": "webpack serve",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "NODE_ENV=production webpack",
+    "build:win": "set NODE_ENV=production& webpack",
+    "build:dev": "webpack"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
